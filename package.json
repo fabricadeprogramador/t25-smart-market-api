@@ -1,0 +1,14 @@
+{
+  "name": "t25-smart-market-api",
+  "version": "1.0.0",
+  "description": "API Smart Market - T25",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
