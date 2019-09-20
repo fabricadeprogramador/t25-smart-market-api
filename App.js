@@ -2,6 +2,7 @@
 
 const Express = require('express')
 const ConvidadoRoute = require('./routes/ConvidadosRoute')
+const UsuarioRoute = require('./routes/UsuariosRoute')
 
 class App {
 
@@ -18,8 +19,11 @@ class App {
         //Conversor JSON-ObjetoJS
         this.app.use(Express.json())
 
-        //Instanciar a minha rota
+        //Instanciar a minha rotas
+        //Rota de Convidados
         new ConvidadoRoute(this.app)
+        //Rota para Usuarios
+        new UsuarioRoute(this.app)
 
         //Rota Raíz
         this.app.get('/', function (req, res) {
