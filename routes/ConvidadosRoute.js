@@ -1,55 +1,64 @@
- let convidados = [{
-         id: 0,
-         nome: "Jão da Silva",
-         idade: 30,
-         sexo: 'M'
-     },
-     {
-         id: 1,
-         nome: "Maria do Bairro",
-         idade: 23,
-         sexo: 'F'
-     },
-     {
-         id: 2,
-         nome: "César de Oliveira",
-         idade: 35,
-         sexo: 'M'
-     },
-     {
-         id: 3,
-         nome: "Pedro dos Cantos",
-         idade: 18,
-         sexo: 'M'
-     }
- ]
+const Convidado = require('./../model/Convidado')
+class ConvidadoRoute {
 
- let cont = 4
+    constructor(app) {
 
- class ConvidadoRoute {
+        let convidado1 = new Convidado(0, 'Jão da Silva', 25, 'M')
+        let convidado2 = new Convidado(1, 'Maria da Silva', 45, 'F')
+        let convidado3 = new Convidado(2, 'Zé da Silva', 18, 'F')
 
-     constructor(app) {
+        this.convidados = [convidado1, convidado2, convidado3]
+        this.cont = 3
 
-         app.get('/convidados', function (req, res) {
-             res.json(convidados)
-         })
+        app.get('/convidados', (req, res) => {
+            res.json(this.convidados)
+        })
 
-         app.post('/convidados', function (req, res) {
-             let novo = req.body
-             novo.id = cont
-             cont++
-             convidados.push(novo)
-             res.json(novo)
-         })
+        app.post('/convidados', (req, res) => {
+            let novo = req.body
+            novo.id = this.cont
+            this.cont++
+            this.convidados.push(novo)
+            res.json(novo)
+        })
 
-         app.put('/convidados', function (req, res) {
-             res.send("Requisição PUT para /convidados")
-         })
+        app.put('/convidados', (req, res) => {
+            let id = req.body.id
+            let erro = true
 
-         app.delete('/convidados', function (req, res) {
-             res.send("Requisição DELETE para /convidados")
-         })
-     }
- }
+            for (let i = 0; i < this.convidados.length; i++) {
+                if (this.convidados[i].id == id) {
+                    this.convidados[i] = req.body
+                    erro = false
+                }
+            }
+            if (erro) {
+                res.status(500).send("Erro ao editar convidado!")
+            } else {
+                res.status(200).send("Convidado editado com sucesso!")
+            }
+        })
 
- module.exports = ConvidadoRoute
+        app.delete('/convidados/:id', (req, res) => {
+
+            let id = req.params.id
+            let erro = true
+            let posicao = null
+
+            for (let i = 0; i < this.convidados.length; i++) {
+                if (this.convidados[i].id == id) {
+                    posicao = i
+                    erro = false
+                }
+            }
+            if (erro) {
+                res.status(500).send("Erro ao remover convidado!")
+            } else {
+
+                res.status(200).send(this.convidados.splice(posicao, 1))
+            }
+        })
+    }
+}
+
+module.exports = ConvidadoRoute
