@@ -1,7 +1,10 @@
 'use strict'
 
 const Express = require('express')
+const Cors = require('cors')
 const ConvidadoRoute = require('./routes/ConvidadosRoute')
+const ClienteRoute = require('./routes/ClientesRoute')
+const ProdutoRoute = require('./routes/ProdutoRoute')
 
 class App {
 
@@ -17,9 +20,12 @@ class App {
 
         //Conversor JSON-ObjetoJS
         this.app.use(Express.json())
+        this.app.use(Cors())
 
         //Instanciar a minha rota
         new ConvidadoRoute(this.app)
+        new ClienteRoute(this.app)
+        new ProdutoRoute(this.app)
 
         //Rota Raíz
         this.app.get('/', function (req, res) {
