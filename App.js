@@ -1,6 +1,7 @@
 'use strict'
 
 const Express = require('express')
+const Cors = require('cors')
 const ConvidadoRoute = require('./routes/ConvidadosRoute')
 const UsuarioRoute = require('./routes/UsuariosRoute')
 
@@ -18,6 +19,7 @@ class App {
 
         //Conversor JSON-ObjetoJS
         this.app.use(Express.json())
+        this.app.use(Cors())
 
         //Instanciar a minha rotas
         //Rota de Convidados
