@@ -5,7 +5,7 @@ const Cors = require('cors')
 const ConvidadoRoute = require('./routes/ConvidadosRoute')
 const ContatoRoute = require('./routes/ContatosRoute')
 const ProdutoRoute = require('./routes/ProdutosRoute')
-
+const UsuarioRoute = require('/.routes/UsuariosRoute')
 
 
 class App {
@@ -33,6 +33,7 @@ class App {
 
         new ProdutoRoute(this.app)
 
+        new UsuarioRoute(this.app)
         //Rota Raíz
         this.app.get('/', function (req, res) {
             res.send('Bem-vindo a API - Smart Market!')
