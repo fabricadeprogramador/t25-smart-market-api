@@ -6,9 +6,6 @@ const ConvidadoRoute = require('./routes/ConvidadosRoute')
 const ContatoRoute = require('./routes/ContatosRoute')
 const ProdutoRoute = require('./routes/ProdutosRoute')
 
-const ClienteRoute = require('./routes/ClientesRoute')
-const ProdutoRoute = require('./routes/ProdutoRoute')
-const UsuarioRoute = require('./routes/UsuariosRoute')
 
 
 class App {
@@ -32,18 +29,9 @@ class App {
         //Rota de Convidados
         new ConvidadoRoute(this.app)
 
-<<<<<<< Updated upstream
-        new ClienteRoute(this.app)
-        new ProdutoRoute(this.app)
-
-        //Rota para Usuarios
-        new UsuarioRoute(this.app)
-
-=======
         new ContatoRoute(this.app)
 
         new ProdutoRoute(this.app)
->>>>>>> Stashed changes
 
         //Rota Raíz
         this.app.get('/', function (req, res) {
