@@ -24,7 +24,7 @@ class ProdutoRoute {
         })
 
         app.put('/produtos', (req, res)=>{
-            res.send("Requisição PUT para /produtos")
+            
         })
 
         app.delete('/produtos', (req, res)=>{
