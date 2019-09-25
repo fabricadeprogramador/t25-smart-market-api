@@ -5,7 +5,7 @@ const Cors = require('cors')
 const ConvidadoRoute = require('./routes/ConvidadosRoute')
 const ContatoRoute = require('./routes/ContatosRoute')
 const ProdutoRoute = require('./routes/ProdutosRoute')
-const UsuarioRoute = require('/.routes/UsuariosRoute')
+const UsuarioRoute = require('./routes/UsuariosRoute')
 
 
 class App {
