@@ -1,6 +1,5 @@
 const Produto = require('./../model/Produto')
 
-
 class ProdutoRoute {
 
     constructor(app){
@@ -25,6 +24,7 @@ class ProdutoRoute {
         })
 
         app.put('/produtos', (req, res)=>{
+<<<<<<< HEAD
           let id = req.body.id;
           let erro = true
 
@@ -40,6 +40,13 @@ class ProdutoRoute {
           }else{
             res.status(200).send('Produto editado com sucesso')
           }
+=======
+            
+        })
+
+        app.delete('/produtos', (req, res)=>{
+            res.send("Requisição DELETE para /produtos")
+>>>>>>> 9b7c998dd4fc9e1e9b0a520b154967a71301d8f4
         })
         
     }
