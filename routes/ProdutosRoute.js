@@ -25,11 +25,21 @@ class ProdutoRoute {
         })
 
         app.put('/produtos', (req, res)=>{
-            res.send("Requisição PUT para /produtos")
-        })
+          let id = req.body.id;
+          let erro = true
 
-        app.delete('/produtos', (req, res)=>{
-            res.send("Requisição DELETE para /produtos")
+          for (let i = 0; i < this.produtos.length; i++) {
+            if (this.produtos[i].id == id) {
+              this.produtos[i] = req.body;
+              erro = false
+            }
+          }
+
+          if (erro) {
+            res.status(500).send('Erro ao editar produto')
+          }else{
+            res.status(200).send('Produto editado com sucesso')
+          }
         })
         
     }
