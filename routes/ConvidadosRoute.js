@@ -9,7 +9,7 @@ class ConvidadoRoute {
 
         this.convidados = [convidado1, convidado2, convidado3]
         this.cont = 3
-
+        
         app.get('/convidados', (req, res) => {
             res.json(this.convidados)
         })

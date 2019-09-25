@@ -3,10 +3,9 @@
 const Express = require('express')
 const Cors = require('cors')
 const ConvidadoRoute = require('./routes/ConvidadosRoute')
-
-const ClienteRoute = require('./routes/ClientesRoute')
-const ProdutoRoute = require('./routes/ProdutoRoute')
-const UsuarioRoute = require('./routes/UsuariosRoute')
+const ContatoRoute = require('./routes/ContatosRoute')
+const ProdutoRoute = require('./routes/ProdutosRoute')
+const UsuarioRoute = require('/.routes/UsuariosRoute')
 
 
 class App {
@@ -20,6 +19,7 @@ class App {
 
         //Instanciar o express
         this.app = Express();
+      
 
         //Conversor JSON-ObjetoJS
         this.app.use(Express.json())
@@ -29,13 +29,11 @@ class App {
         //Rota de Convidados
         new ConvidadoRoute(this.app)
 
-        new ClienteRoute(this.app)
+        new ContatoRoute(this.app)
+
         new ProdutoRoute(this.app)
 
-        //Rota para Usuarios
         new UsuarioRoute(this.app)
-
-
         //Rota Raíz
         this.app.get('/', function (req, res) {
             res.send('Bem-vindo a API - Smart Market!')
