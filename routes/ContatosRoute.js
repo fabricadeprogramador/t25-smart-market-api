@@ -4,9 +4,9 @@ class ContatoRoute {
 
     constructor(app) {
 
-        let Contato1 = new Contato("Jose da silva", "tecnico", "Alterar bla bla")
-        let Contato2 = new Contato("Jose", "tecnico", "Alterar bla bla")
-        let Contato3 = new Contato("Jose", "tecnico", "Alterar bla bla")
+        let Contato1 = new Contato(0, "Jose da silva", "tecnico", "Alterar bla bla", "24/09/19", )
+        let Contato2 = new Contato(1, "Jose", "tecnico", "Alterar bla bla", "24/09/19", )
+        let Contato3 = new Contato(2, "Jose", "tecnico", "Alterar bla bla", "24/09/19", )
 
         this.contatos = [Contato1, Contato2, Contato3]
         this.cont = 3

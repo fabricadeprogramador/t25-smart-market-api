@@ -5,9 +5,9 @@ const Cors = require('cors')
 const ConvidadoRoute = require('./routes/ConvidadosRoute')
 const ContatoRoute = require('./routes/ContatosRoute')
 const ProdutoRoute = require('./routes/ProdutosRoute')
+const CompraRoute = require('./routes/ComprasRoute')
 const UsuarioRoute = require('./routes/UsuariosRoute')
-const UsuarioCliente = require('./routes/ClientesRoute')
-
+const ClienteRoute = require('./routes/ClientesRoute')
 
 class App {
 
@@ -34,9 +34,11 @@ class App {
 
         new ProdutoRoute(this.app)
 
+        new CompraRoute(this.app)
+
         new UsuarioRoute(this.app)
 
-        new UsuarioCliente(this.app)
+        new ClienteRoute(this.app)
 
                 //Rota Raíz
         this.app.get('/', function (req, res) {
