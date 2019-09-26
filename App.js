@@ -8,7 +8,6 @@ const ProdutoRoute = require('./routes/ProdutosRoute')
 const CompraRoute = require('./routes/ComprasRoute')
 const UsuarioRoute = require('./routes/UsuariosRoute')
 
-
 class App {
 
     constructor() {
@@ -37,6 +36,7 @@ class App {
         new CompraRoute(this.app)
 
         new UsuarioRoute(this.app)
+
         //Rota Raíz
         this.app.get('/', function (req, res) {
             res.send('Bem-vindo a API - Smart Market!')

@@ -39,9 +39,7 @@ class ProdutoRoute {
       } else {
         res.status(200).send('Produto editado com sucesso')
       }
-
     })
-
     app.delete('/produtos', (req, res) => {
       res.send("Requisição DELETE para /produtos")
     })
