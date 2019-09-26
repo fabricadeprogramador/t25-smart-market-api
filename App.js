@@ -5,9 +5,14 @@ const Cors = require('cors')
 const ConvidadoRoute = require('./routes/ConvidadosRoute')
 const ContatoRoute = require('./routes/ContatosRoute')
 const ProdutoRoute = require('./routes/ProdutosRoute')
+<<<<<<< HEAD
 const UsuarioRoute = require('./routes/UsuariosRoute')
 
 
+=======
+const CompraRoute = require('./routes/ComprasRoute')
+const UsuarioRoute = require('./routes/UsuariosRoute')
+>>>>>>> 200dbdf3694830a10121c934ecc4a2c0d604c0d6
 
 class App {
 
@@ -34,6 +39,11 @@ class App {
 
         new ProdutoRoute(this.app)
 
+<<<<<<< HEAD
+=======
+        new CompraRoute(this.app)
+
+>>>>>>> 200dbdf3694830a10121c934ecc4a2c0d604c0d6
         new UsuarioRoute(this.app)
         
         //Rota Raíz
