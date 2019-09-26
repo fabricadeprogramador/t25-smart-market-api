@@ -34,9 +34,9 @@ class App {
 
         new ProdutoRoute(this.app)
 
-        new CompraRoute(this.app)
-
         new UsuarioRoute(this.app)
+
+        new CompraRoute(this.app)
 
         new ClienteRoute(this.app)
 
