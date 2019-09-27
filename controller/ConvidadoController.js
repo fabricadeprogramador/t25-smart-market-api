@@ -24,7 +24,7 @@ class ConvidadoController {
 
     editar(req, res) {
         let id = req.body.id
-        let erro = true
+        let erro = true;
 
         for (let i = 0; i < convidados.length; i++) {
             if (convidados[i].id == id) {
