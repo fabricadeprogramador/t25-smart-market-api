@@ -10,7 +10,7 @@ class ProdutoRoute {
         .get(produto.buscar)
         .post(produto.salvar)
         .put(produto.editar)
-        
+
     }
 }
 
