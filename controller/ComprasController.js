@@ -67,3 +67,5 @@ class ComprasController {
     }
 }
 
+module.exports = ComprasController
+
