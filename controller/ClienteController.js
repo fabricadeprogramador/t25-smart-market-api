@@ -1,9 +1,9 @@
 'use strict'
 const Cliente = require('./../model/Cliente')
 
-let cliente1 = new Cliente(0, 'Jão', '000.111.222-33', '019992', 'email@gmail.com', 79083333, 'Rua do Jão', 1999, 'Centro', 'Campo Grande', 'MS', 'complemento', '67999112288', 'M', true)
-let cliente2 = new Cliente(1, 'Maria', '111.000.222-33', '019992', 'email@gmail.com', 79083333, 'Rua do Jão', 1999, 'Centro', 'Campo Grande', 'MS', 'complemento', '67999112288', 'F', true)
-let cliente3 = new Cliente(2, 'Antônio', '222.333.222-33', '019992', 'email@gmail.com', 79083333, 'Rua do Jão', 1999, 'Centro', 'Campo Grande', 'MS', 'complemento', '67999112288', 'M', true)
+let cliente1 = new Cliente(0, 'Jão', '000.111.222-33', '019992', 'jão@gmail.com', 79083333, 'Rua do Jão', 1999, 'Centro', 'Campo Grande', 'MS', 'complemento', '67999534288', 'M', true)
+let cliente2 = new Cliente(1, 'Maria', '111.000.222-33', '019992', 'maria@gmail.com', 79083333, 'Rua do Jão', 1999, 'Centro', 'Campo Grande', 'MS', 'complemento', '67999198765', 'F', true)
+let cliente3 = new Cliente(2, 'Antônio', '222.333.222-33', '019992', 'tonho@gmail.com', 79083333, 'Rua do Jão', 1999, 'Centro', 'Campo Grande', 'MS', 'complemento', '67999123456', 'M', true)
 
 let clientes = [cliente1, cliente2, cliente3]
 let cont = 3
