@@ -7,6 +7,8 @@ const ContatoRoute = require('./routes/ContatosRoute')
 const ProdutoRoute = require('./routes/ProdutosRoute')
 const CompraRoute = require('./routes/ComprasRoute')
 const UsuarioRoute = require('./routes/UsuariosRoute')
+const ClienteRoute = require('./routes/ClientesRoute')
+const SetorRoute = require('./routes/SetoresRoute')
 
 class App {
 
@@ -33,10 +35,14 @@ class App {
 
         new ProdutoRoute(this.app)
 
+        new UsuarioRoute(this.app)
+
         new CompraRoute(this.app)
 
-        new UsuarioRoute(this.app)
-        
+        new ClienteRoute(this.app)
+
+        new SetorRoute (this.app)
+
         //Rota Raíz
         this.app.get('/', function (req, res) {
             res.send('Bem-vindo a API - Smart Market!')

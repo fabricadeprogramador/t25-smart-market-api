@@ -1,31 +1,26 @@
 "use strict"
 
-const Compras = require("./../model/Compra")
+const Compra = require("./../model/Compra")
 
 let Compra1 = new Compra("tv", "15", "24/09/19", "dinheiro", "Jose")
 let Compra2 = new Compra("tv", "15", "24/09/19", "dinheiro", "Jose")
 let Compra3 = new Compra("tv", "15", "24/09/19", "dinheiro", "Jose")
 
-this.Compras = [Compra1, Compra2, Compra3]
-this.cont = 3
+let compras = [Compra1, Compra2, Compra3]
+let cont = 3
 
 class ComprasController {
 
 
-
-
-
-
-
     buscarCompras(req, res) {
-        res.json(this.Compras)
+        res.json(compras)
     }
 
     adicionar(req, res) {
         let novo = req.body
-        novo.id = this.cont
-        this.cont++ +
-            this.Compras.push(novo)
+        novo.id = cont
+        cont++
+        compras.push(novo)
         res.json(novo)
     }
 
@@ -33,9 +28,9 @@ class ComprasController {
         let id = req.body.id
         let erro = true
 
-        for (let i = 0; i < this.Compras.length; i++) {
-            if (this.Compras[i].id == id) {
-                this.Compras[i] = req.body
+        for (let i = 0; i < compras.length; i++) {
+            if (compras[i].id == id) {
+                compras[i] = req.body
                 erro = false
             }
         }
@@ -52,8 +47,8 @@ class ComprasController {
         let erro = true
         let posicao = null
 
-        for (let i = 0; i < this.Compras.length; i++) {
-            if (this.Compras[i].id == id) {
+        for (let i = 0; i < compras.length; i++) {
+            if (compras[i].id == id) {
                 posicao = i
                 erro = false
             }
@@ -62,10 +57,13 @@ class ComprasController {
             res.status(500).send("Erro ao remover convidado!")
         } else {
 
-            res.status(200).send(this.Compras.splice(posicao, 1))
+            res.status(200).send(compras.splice(posicao, 1))
         }
     }
 }
 
 module.exports = ComprasController
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8f36a11fdb5700b434411a0fda15f9a47533dcc2

@@ -34,9 +34,9 @@ class UsuarioController {
             }
         }
         if (erro) {
-            res.status(500).send("Erro ao editar convidado!")
+            res.status(500).send("Erro ao editar Usuario!")
         } else {
-            res.status(200).send("Convidado editado com sucesso!")
+            res.status(200).send("Usuario editado com sucesso!")
         }
     }
 
@@ -52,7 +52,7 @@ class UsuarioController {
             }
         }
         if (erro) {
-            res.status(500).send("Erro ao remover convidado!")
+            res.status(500).send("Erro ao remover usuario!")
         } else {
 
             res.status(200).send(usuarios.splice(posicao, 1))
