@@ -6,9 +6,9 @@ class Contato {
         this.assunto = assunto
         this.mensagem = mensagem
         this.datacontato = datacontato
-       
+
         this.icon = icon
-        
+
     }
 }
 
