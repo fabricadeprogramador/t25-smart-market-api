@@ -46,7 +46,7 @@ class ClienteController {
 
         for (let i = 0; i < clientes.length; i++) {
             if (clientes[i].id == id) {
-                clientes[i].ativo = !req.body.ativo;
+                clientes[i].ativo = !clientes[i].ativo;
                 erro = false;
             }
         }
