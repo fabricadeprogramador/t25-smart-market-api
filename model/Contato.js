@@ -1,11 +1,13 @@
 class Contato {
 
-    constructor(id, cliente, assunto, mensagem, datacontato) {
+    constructor(id, cliente, assunto, mensagem, datacontato, icon, resposta, respondido) {
         this.id = id
         this.cliente = cliente
         this.assunto = assunto
         this.mensagem = mensagem
         this.datacontato = datacontato
+        this.resposta = ""
+        this.respondido = false
         this.resposta = ""
         this.respondido = false
 

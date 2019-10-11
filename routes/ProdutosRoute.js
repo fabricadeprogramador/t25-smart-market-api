@@ -2,7 +2,6 @@ const ProdutoController = require('./../controller/ProdutoController')
 
 class ProdutoRoute {
 
-
   constructor(app) {
 
 
@@ -17,6 +16,7 @@ class ProdutoRoute {
       .put(produto.editar)
 
   }
+
 }
 
 module.exports = ProdutoRoute

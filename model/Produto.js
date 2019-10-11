@@ -1,6 +1,8 @@
 class Produto {
     constructor(id, disponivel, ativo, descricao, valor, qtdDisponivel, marca, setor, imagem, validade) {
+
         this.id = id
+        this.disponivel = disponivel
         this.ativo = ativo
         this.descricao = descricao
         this.valor = valor
