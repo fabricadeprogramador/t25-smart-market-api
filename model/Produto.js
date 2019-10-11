@@ -1,5 +1,5 @@
 class Produto{
-    constructor(id, ativo,  produto, preco, qtdDisponivel, marca, setor, imagem){
+    constructor(id, disponivel,  descricao, valor, qtdDisponivel, marca, setor, imagem, validade){
         this.id = id
         this.ativo = ativo
         this.produto = produto
@@ -8,6 +8,7 @@ class Produto{
         this.marca = marca
         this.setor = setor
         this.imagem = imagem
+        this.validade = validade
     }
 }
 module.exports = Produto

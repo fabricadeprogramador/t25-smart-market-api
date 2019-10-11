@@ -2,12 +2,16 @@
 
 const Express = require('express')
 const Cors = require('cors')
+
+const Mongoose = require('mongoose')
+
 const ConvidadoRoute = require('./routes/ConvidadosRoute')
 const ContatoRoute = require('./routes/ContatosRoute')
 const ProdutoRoute = require('./routes/ProdutosRoute')
 const CompraRoute = require('./routes/ComprasRoute')
 const UsuarioRoute = require('./routes/UsuariosRoute')
 const ClienteRoute = require('./routes/ClientesRoute')
+const SetorRoute = require('./routes/SetoresRoute')
 
 class App {
 
@@ -20,11 +24,17 @@ class App {
 
         //Instanciar o express
         this.app = Express();
-      
+
 
         //Conversor JSON-ObjetoJS
         this.app.use(Express.json())
         this.app.use(Cors())
+
+        //Conectando com o banco mLab
+        Mongoose.connect("mongodb://t25-smart-market:t25-ht@ds233268.mlab.com:33268/smart-market-api", {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        })
 
         //Instanciar a minha rotas
         //Rota de Convidados
@@ -38,9 +48,12 @@ class App {
 
         new CompraRoute(this.app)
 
+        new UsuarioRoute(this.app)
         new ClienteRoute(this.app)
 
-                //Rota Raíz
+        new SetorRoute(this.app)
+
+        //Rota Raíz
         this.app.get('/', function (req, res) {
             res.send('Bem-vindo a API - Smart Market!')
         })
@@ -54,3 +67,7 @@ class App {
 }
 
 new App().init()
+
+
+//dbuser: t25-smart-market
+//dbpassword: t25-ht
