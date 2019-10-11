@@ -5,13 +5,7 @@ const Cors = require('cors')
 
 const Mongoose = require('mongoose')
 
-const ConvidadoRoute = require('./routes/ConvidadosRoute')
-const ContatoRoute = require('./routes/ContatosRoute')
-const ProdutoRoute = require('./routes/ProdutosRoute')
-const CompraRoute = require('./routes/ComprasRoute')
-const UsuarioRoute = require('./routes/UsuariosRoute')
-const ClienteRoute = require('./routes/ClientesRoute')
-const SetorRoute = require('./routes/SetoresRoute')
+const Convidado = require('./model/Convidado')
 
 class App {
 
@@ -35,6 +29,16 @@ class App {
             useNewUrlParser: true,
             useUnifiedTopology: true
         })
+
+        new Convidado()
+
+        const ConvidadoRoute = require('./routes/ConvidadosRoute')
+        const ContatoRoute = require('./routes/ContatosRoute')
+        const ProdutoRoute = require('./routes/ProdutosRoute')
+        const CompraRoute = require('./routes/ComprasRoute')
+        const UsuarioRoute = require('./routes/UsuariosRoute')
+        const ClienteRoute = require('./routes/ClientesRoute')
+        const SetorRoute = require('./routes/SetoresRoute')
 
         //Instanciar a minha rotas
         //Rota de Convidados

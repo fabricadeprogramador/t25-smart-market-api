@@ -1,10 +1,21 @@
-class Convidado {
+const Mongoose = require('mongoose')
+class Convidado extends Mongoose.Schema {
 
-    constructor(id, nome, idade, sexo) {
-        this.id = id
-        this.nome = nome
-        this.idade = idade
-        this.sexo = sexo
+    constructor() {
+
+        super({
+            nome: {
+                type: String,
+                required: true
+            },
+            idade: {
+                type: Number
+            },
+            sexo: {
+                type: String
+            }
+        })
+        Mongoose.model('Convidado', this)
     }
 }
 

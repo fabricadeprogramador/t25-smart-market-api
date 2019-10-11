@@ -1,4 +1,3 @@
-const Convidado = require('./../model/Convidado')
 const ConvidadoController = require('./../controller/ConvidadoController')
 class ConvidadoRoute {
 
