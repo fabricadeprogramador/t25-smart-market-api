@@ -8,6 +8,7 @@ class ProdutoRoute {
 
       app.route('/produtos')
         .get(produto.buscar)
+        .get(produto.buscarSetores)
         .post(produto.salvar)
         .put(produto.editar)
 

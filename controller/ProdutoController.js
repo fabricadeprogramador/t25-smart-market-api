@@ -4,11 +4,16 @@ let produto1 = new Produto(0, true, 'TV 43 Polegadas', 2300, 200, 'SAMSUNG', 'El
 let produto2 = new Produto(1, true, 'Latinha 350ml de Coca-cola', 3.5, 100, 'COCA', 'Bebidas', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgUV4mrvYK_5-z4G2s2iZ4l1Bv41fw7Z0-dV48lmjTlg1p8wyI')
 
 let produtos = [produto1, produto2]
+let setores = ['Frios' , 'Eletrônicos' , 'Limpeza' , 'Higiene' , 'Bebidas' , ]
 let cont = 2
 
 class ProdutoController{
     buscar(req, res){
         res.json(produtos)
+    }
+
+    buscarSetores(req, res){
+      res.json(setores)
     }
 
     salvar(req, res){
