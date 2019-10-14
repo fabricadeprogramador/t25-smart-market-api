@@ -1,11 +1,12 @@
 'use strict'
-const Convidado = require('./../model/Convidado')
+// const Convidado = require('./../model/Convidado')
 
-let convidado1 = new Convidado(0, 'Jão da Silva', 25, 'M')
-let convidado2 = new Convidado(1, 'Maria da Silva', 45, 'F')
-let convidado3 = new Convidado(2, 'Zé da Silva', 18, 'F')
+// let convidado1 = new Convidado(0, 'Jão da Silva', 25, 'M')
+// let convidado2 = new Convidado(1, 'Maria da Silva', 45, 'F')
+// let convidado3 = new Convidado(2, 'Zé da Silva', 18, 'F')
 
-let convidados = [convidado1, convidado2, convidado3]
+// let convidados = [convidado1, convidado2, convidado3]
+let convidados = []
 let cont = 3
 
 class ConvidadoController {
