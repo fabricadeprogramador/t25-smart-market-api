@@ -63,7 +63,3 @@ class ComprasController {
 }
 
 module.exports = ComprasController
-<<<<<<< HEAD
-
-=======
->>>>>>> 8f36a11fdb5700b434411a0fda15f9a47533dcc2
