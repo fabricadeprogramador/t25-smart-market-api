@@ -3,8 +3,8 @@
 const Compra = require("./../model/Compra")
 
 let Compra1 = new Compra("tv", "15", "24/09/19", "dinheiro", "Jose")
-let Compra2 = new Compra("tv", "15", "24/09/19", "dinheiro", "Jose")
-let Compra3 = new Compra("tv", "15", "24/09/19", "dinheiro", "Jose")
+let Compra2 = new Compra("celular", "15", "24/09/19", "dinheiro", "Jose")
+let Compra3 = new Compra("tablet", "15", "24/09/19", "dinheiro", "Jose")
 
 let compras = [Compra1, Compra2, Compra3]
 let cont = 3
