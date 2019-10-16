@@ -9,7 +9,7 @@
 let convidados = []
 let cont = 3
 
-class ConvidadoController {
+class ConvidadoController { 
 
     buscarTodos(req, res) {
         res.json(convidados)

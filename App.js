@@ -48,11 +48,11 @@ class App {
 
         new ProdutoRoute(this.app)
 
-        new UsuarioRoute(this.app)
+        //new UsuarioRoute(this.app)
 
         new CompraRoute(this.app)
 
-        new UsuarioRoute(this.app)
+        //new UsuarioRoute(this.app)
         new ClienteRoute(this.app)
 
         new SetorRoute(this.app)

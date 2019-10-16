@@ -1,12 +1,27 @@
-class Usuario {
+/*const mongoose from 'mongoose';
 
-    constructor(id, ativo, username, senha, tipo){
-        this.id = id;
-        this.ativo = ativo;
-        this.username = username;
-        this.senha = senha;
-        this.tipo = tipo;
+
+class Usuario extends mongoose.Schema {
+
+    constructor(){
+
+        super({
+            ativo: {
+                type: Boolean
+            },
+            username: {
+                type: String
+            },
+            senha: {
+                type: String
+            },
+            tipo: {
+                type: String
+            }
+        }); 
+        mongoose.model('Usuario', this);
     }
 }
 
-module.exports = Usuario
+module.exports = Usuario;
+*/

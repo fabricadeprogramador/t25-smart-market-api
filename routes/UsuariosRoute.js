@@ -1,4 +1,4 @@
-const Usuario = require('./../model/Usuario')
+/*const Usuario = require('./../model/Usuario')
 const UsuarioController = require('./../controller/UsuarioController')
 
 class UsuarioRoute {
@@ -18,5 +18,6 @@ class UsuarioRoute {
     }
 }
 
-module.exports = UsuarioRoute
+module.exports = UsuarioRoute;
+*/
 
