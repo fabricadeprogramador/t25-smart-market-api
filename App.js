@@ -2,10 +2,11 @@
 
 const Express = require('express')
 const Cors = require('cors')
-
 const Mongoose = require('mongoose')
 
+//Importações dos modelos
 const Convidado = require('./model/Convidado')
+
 
 class App {
 
@@ -30,8 +31,10 @@ class App {
             useUnifiedTopology: true
         })
 
+        //Instanciando os modelos
         new Convidado()
 
+        //Importações das rotas
         const ConvidadoRoute = require('./routes/ConvidadosRoute')
         const ContatoRoute = require('./routes/ContatosRoute')
         const ProdutoRoute = require('./routes/ProdutosRoute')
@@ -43,18 +46,12 @@ class App {
         //Instanciar a minha rotas
         //Rota de Convidados
         new ConvidadoRoute(this.app)
-
         new ContatoRoute(this.app)
-
         new ProdutoRoute(this.app)
-
         new UsuarioRoute(this.app)
-
         new CompraRoute(this.app)
-
         new UsuarioRoute(this.app)
         new ClienteRoute(this.app)
-
         new SetorRoute(this.app)
 
         //Rota Raíz
