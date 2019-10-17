@@ -6,8 +6,8 @@ class ConvidadoRoute {
         let convidado = new ConvidadoController()
 
         app.route('/convidados')
-            .get(convidado.buscarTodos)
-            .post(convidado.adicionar)
+            .get(ConvidadoController.buscarTodos)
+            .post(ConvidadoController.adicionar)
             .put(convidado.editar)
 
 

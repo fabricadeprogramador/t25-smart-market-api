@@ -1,26 +1,30 @@
 'use strict'
-// const Convidado = require('./../model/Convidado')
+const Mongoose = require('mongoose')
+const Convidado = Mongoose.model('Convidado')
 
-// let convidado1 = new Convidado(0, 'Jão da Silva', 25, 'M')
-// let convidado2 = new Convidado(1, 'Maria da Silva', 45, 'F')
-// let convidado3 = new Convidado(2, 'Zé da Silva', 18, 'F')
-
-// let convidados = [convidado1, convidado2, convidado3]
 let convidados = []
 let cont = 3
 
 class ConvidadoController { 
 
-    buscarTodos(req, res) {
-        res.json(convidados)
+    static async buscarTodos(req, res) {
+
+        try {
+            res.json(await Convidado.find({}))
+        } catch (error) {
+            res.status(500).send(`Erro ao buscar convidados: ${error}`)
+        }
     }
 
-    adicionar(req, res) {
-        let novo = req.body
-        novo.id = cont
-        cont++
-        convidados.push(novo)
-        res.json(novo)
+    static async adicionar(req, res) {
+
+        try {
+            let convidadoNovo = req.body
+            res.json(await Convidado.create(convidadoNovo))
+
+        } catch (error) {
+            res.status(500).send(`Erro ao salvar convidado: ${error}`)
+        }
     }
 
     editar(req, res) {

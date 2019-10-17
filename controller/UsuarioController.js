@@ -1,4 +1,4 @@
-/*'use strict'
+'use strict'
 const Usuario = require('./../model/Usuario')
 
 let usuario1 = new Usuario(0, true, 'jao da silva', 123, 'ADMIN');
@@ -63,4 +63,3 @@ class UsuarioController {
 }
 
 module.exports = UsuarioController;
-*/

@@ -1,4 +1,4 @@
-/*const mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 
 class Usuario extends mongoose.Schema {
@@ -24,4 +24,3 @@ class Usuario extends mongoose.Schema {
 }
 
 module.exports = Usuario;
-*/
