@@ -5,7 +5,7 @@ const Convidado = Mongoose.model('Convidado')
 let convidados = []
 
 
-class ConvidadoController {
+class ConvidadoController { 
 
     static async buscarTodos(req, res) {
 

@@ -5,18 +5,20 @@ class UsuarioRoute {
 
     constructor(app) {
 
-        let usuario = new UsuarioController()
-
         app.route('/usuarios')
-            .get(usuario.buscarTodos)
-            .post(usuario.adicionar)
-            .put(usuario.editar)
+            .get(UsuarioController.buscarTodos)
+            .post(UsuarioController.adicionar)
+            .put(UsuarioController.editar)
 
 
         app.route('/usuarios/:id')
-            .delete(usuario.deletar)
+            .delete(UsuarioController.deletar)
+
+        app.route('/usuarios/busca')
+            .get(UsuarioController.buscarPorNome)
     }
 }
 
-module.exports = UsuarioRoute
+module.exports = UsuarioRoute;
+
 
