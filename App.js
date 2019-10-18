@@ -28,7 +28,8 @@ class App {
         //Conectando com o banco mLab
         Mongoose.connect("mongodb://t25-smart-market:t25-ht@ds233268.mlab.com:33268/smart-market-api", {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            useFindAndModify: false
         })
 
         //Instanciando os modelos
