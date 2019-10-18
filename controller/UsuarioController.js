@@ -1,61 +1,55 @@
 'use strict'
-const Usuario = require('./../model/Usuario')
-
-let usuario1 = new Usuario(0, true, 'jao da silva', 123, 'ADMIN');
-let usuario2 = new Usuario(1, true, 'maria de fatima', 123, 'ADMIN');
-let usuario3 = new Usuario(2, true, 'roberto de souza', 123, 'ADMIN');
-
-
-let usuarios = [usuario1, usuario2, usuario3];
-let cont = 3
+const Mongoose = require('mongoose');
+const Usuario = require('./../model/Usuario');
 
 class UsuarioController {
 
-    buscarTodos(req, res) {
-        res.json(usuarios)
+    static async buscarTodos(req, res) {
+
+        try {
+            res.json(await Usuario.find({}));;
+        } catch (error) {
+            res.status(500).send(`Erro ao buscar usuários: ${error}`);
+        }
+    }
+
+    static async buscarPorNome(req, res) {
+        try {
+            let objBusca = req.body
+            res.json(await Convidado.find(objBusca))
+        } catch (error) {
+            res.status(500).send(`Erro ao buscar convidado por nome: ${error}`)
+        }
     }
 
     adicionar(req, res) {
-        let novo = req.body
-        novo.id = cont
-        cont++
-        usuarios.push(novo)
-        res.json(novo)
+        try {
+            let usuarioNovo = req.body;
+            res.json(await Usuario.create(usuarioNovo));
+
+        } catch (error) {
+            res.status(500).send(`Erro ao salvar usuário: ${error}`);
+        }
     }
 
     editar(req, res) {
-        let id = req.body.id
-        let erro = true
-
-        for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].id == id) {
-                usuarios[i] = req.body
-                erro = false
-            }
-        }
-        if (erro) {
-            res.status(500).send("Erro ao editar Usuario!")
-        } else {
-            res.status(200).send("Usuario editado com sucesso!")
+        try {
+            let usuarioEdicao = req.body
+            res.status(200).json(await Usuario.findByIdAndUpdate(usuarioEdicao))
+        } catch (error) {
+            res.status(500).send(`Erro ao editar o convidado: ${error}`)
         }
     }
 
     deletar(req, res) {
-        let id = req.params.id
-        let erro = true
-        let posicao = null
+        try {
+            let id = req.params.id
+            let objDeletar = {}
+            objDeletar._id = id
 
-        for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].id == id) {
-                posicao = i
-                erro = false
-            }
-        }
-        if (erro) {
-            res.status(500).send("Erro ao remover usuario!")
-        } else {
-
-            res.status(200).send(usuarios.splice(posicao, 1))
+            res.status(200).json(await Usuario.findByIdAndDelete(objDeletar))
+        } catch (error) {
+            res.status(500).send(`Erro ao remover convidado: ${error}`)
         }
     }
 

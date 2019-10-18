@@ -16,6 +16,15 @@ class ConvidadoController {
         }
     }
 
+    static async buscarPorNome(req, res) {
+        try {
+            let objBusca = req.body
+            res.json(await Convidado.find(objBusca))
+        } catch (error) {
+            res.status(500).send(`Erro ao buscar convidado por nome: ${error}`)
+        }
+    }
+
     static async adicionar(req, res) {
 
         try {
@@ -27,39 +36,24 @@ class ConvidadoController {
         }
     }
 
-    editar(req, res) {
-        let id = req.body.id
-        let erro = true;
-
-        for (let i = 0; i < convidados.length; i++) {
-            if (convidados[i].id == id) {
-                convidados[i] = req.body
-                erro = false
-            }
-        }
-        if (erro) {
-            res.status(500).send("Erro ao editar convidado!")
-        } else {
-            res.status(200).send("Convidado editado com sucesso!")
+    static async editar(req, res) {
+        try {
+            let convidadoEdicao = req.body
+            res.status(200).json(await Convidado.findByIdAndUpdate(convidadoEdicao))
+        } catch (error) {
+            res.status(500).send(`Erro ao editar o convidado: ${error}`)
         }
     }
 
-    deletar(req, res) {
-        let id = req.params.id
-        let erro = true
-        let posicao = null
+    static async deletar(req, res) {
+        try {
+            let id = req.params.id
+            let objDeletar = {}
+            objDeletar._id = id
 
-        for (let i = 0; i < convidados.length; i++) {
-            if (convidados[i].id == id) {
-                posicao = i
-                erro = false
-            }
-        }
-        if (erro) {
-            res.status(500).send("Erro ao remover convidado!")
-        } else {
-
-            res.status(200).send(convidados.splice(posicao, 1))
+            res.status(200).json(await Convidado.findByIdAndDelete(objDeletar))
+        } catch (error) {
+            res.status(500).send(`Erro ao remover convidado: ${error}`)
         }
     }
 }
