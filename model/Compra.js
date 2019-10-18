@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 class Compra extends mongoose.Schema {
     constructor() {
 
-        Super({
+        super({
 
 
             valorTotal: {
@@ -23,7 +23,7 @@ class Compra extends mongoose.Schema {
 
         })
 
-        mongoose.model("Compras", this)
+        mongoose.model("Compra", this)
     }
 }
 
