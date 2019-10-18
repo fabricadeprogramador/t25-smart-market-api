@@ -1,13 +1,33 @@
-class Compra {
+const mongoose = require("mongoose")
 
-    constructor(produtos, valorTotal, data, pagamento, cliente) {
+class Compra extends mongoose.Schema {
+    constructor() {
 
-        this.produtos = produtos
-        this.valorTotal = valorTotal
-        this.data = data
-        this.pagamento = pagamento
-        this.cliente = cliente
+        super({
+
+
+            valorTotal: {
+                type: Number,
+
+            },
+
+            data: {
+
+                type: String,
+            },
+
+            pagamento: {
+
+                type: String,
+            }
+
+        })
+
+        mongoose.model("Compra", this)
     }
-
 }
+
+
+
+
 module.exports = Compra
