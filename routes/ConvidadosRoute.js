@@ -3,16 +3,16 @@ class ConvidadoRoute {
 
     constructor(app) {
 
-        let convidado = new ConvidadoController()
-
         app.route('/convidados')
             .get(ConvidadoController.buscarTodos)
             .post(ConvidadoController.adicionar)
-            .put(convidado.editar)
-
+            .put(ConvidadoController.editar)
 
         app.route('/convidados/:id')
-            .delete(convidado.deletar)
+            .delete(ConvidadoController.deletar)
+
+        app.route('/convidados/busca')
+            .get(ConvidadoController.buscarPorNome)
 
     }
 }
