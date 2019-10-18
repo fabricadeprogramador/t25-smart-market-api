@@ -61,6 +61,7 @@ class App {
         new CompraRoute(this.app)
         new ClienteRoute(this.app)
         new SetorRoute(this.app)
+        new UsuarioRoute(this.app)
 
         //Rota Raíz
         this.app.get('/', function (req, res) {
