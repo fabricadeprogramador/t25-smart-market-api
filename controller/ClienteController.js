@@ -27,20 +27,12 @@ class ClienteController {
 
 
 
-    editar(req, res) {
-        let id = req.body.id
-        let erro = true
-
-        for (let i = 0; i < clientes.length; i++) {
-            if (clientes[i].id == id) {
-                clientes[i] = req.body;
-                erro = false;
-            }
-        }
-        if (erro) {
-            res.status(500).send("Erro ao editar cliente!");
-        } else {
-            res.status(200).send("Cliente editado com sucesso!");
+    static async editar(req, res) {
+        try {
+            let clienteEdicao = req.body
+            res.status(200).json(await Cliente.findByIdAndUpdate(clienteEdicao))
+        } catch (error) {
+            res.status(500).send(`Erro ao editar o cliente: ${error}`)
         }
     }
 

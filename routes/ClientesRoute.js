@@ -8,7 +8,7 @@ class ClienteRoute {
         app.route('/clientes')
             .get(ClienteController.buscarTodos)
             .post(ClienteController.adicionar)
-            .put(cliente.editar)
+            .put(ClienteController.editar)
 
             
         app.route('/clientes/ativacao')
