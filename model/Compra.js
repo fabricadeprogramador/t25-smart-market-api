@@ -7,18 +7,18 @@ class Compra extends mongoose.Schema {
 
 
             valorTotal: {
-                type: Number,
+                type: Number
 
             },
 
             data: {
 
-                type: String,
+                type: String
             },
 
             pagamento: {
 
-                type: String,
+                type: String
             }
 
         })

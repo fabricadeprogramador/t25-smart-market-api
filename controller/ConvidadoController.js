@@ -3,9 +3,9 @@ const Mongoose = require('mongoose')
 const Convidado = Mongoose.model('Convidado')
 
 let convidados = []
-let cont = 3
 
-class ConvidadoController {
+
+class ConvidadoController { 
 
     static async buscarTodos(req, res) {
 

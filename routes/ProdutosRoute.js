@@ -2,7 +2,6 @@ const ProdutoController = require('./../controller/ProdutoController')
 
 class ProdutoRoute {
 
-
   constructor(app) {
     let produto = new ProdutoController()
 
