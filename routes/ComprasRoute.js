@@ -1,19 +1,18 @@
-const Compra = require('./../model/Compra')
+
 const ComprasController = require('./../controller/ComprasController')
 
 class CompraRoute {
 
     constructor(app) {
 
-        let compra = new ComprasController()
+        
 
         app.route('/compras')
-            .get(compra.buscarCompras)
-            .put(compra.editar)
-            .post(compra.adicionar)
+            .get(ComprasController.buscarTodos)
+            .post(ComprasController.adicionar)
+            
 
-        app.route('/compras/:id')
-            .delete(compra.deletar)
+        
     }
 }
 

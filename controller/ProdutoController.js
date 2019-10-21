@@ -1,5 +1,5 @@
-'use strict'
-const Mongoose = require('mongoose')
+
+const Produto = require('./../model/Produto')
 
 class ProdutoController{
 
