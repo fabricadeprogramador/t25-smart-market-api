@@ -1,39 +1,36 @@
+
 const Produto = require('./../model/Produto')
 
 class ProdutoController{
-    buscar(req, res){
-        res.json(produtos)
+
+    static async buscar(req, res){
+      try {
+        res.json(await Produto.find({}))
+      } catch (error) {
+        res.status(500).send(`Erro ao buscar produtos: ${error}`)
+      }  
+      
     }
 
-    buscarSetores(req, res){
-      res.json(setores)
+    static async adicionar(req, res){
+      try {
+        let novoProduto = req.body;
+        res.json(await Produto.create(novoProduto)) 
+               
+      } catch (error) {
+        res.status(500).send(`Erro ao adicionar produtos: ${error}`)
+      }
     }
 
-    salvar(req, res){
-        let novo = req.body;
-        novo.id = cont;
-        cont++
-        produtos.push(novo);
-        res.json(novo);
+    static async editar(req, res){
+      try {
+        let editarProduto = req.body
+        res.json(await Produto.findByIdAndUpdate(editarProduto))
+      } catch (error) {
+        res.status(500).send(`Erro ao editar produtos: ${error}`)
+      }
     }
 
-    editar(req, res){
-        let id = req.body.id;
-        let erro = true
-
-        for (let i = 0; i < produtos.length; i++) {
-          if (produtos[i].id == id) {
-            produtos[i] = req.body;
-            erro = false
-          }
-        }
-
-        if (erro) {
-          res.status(500).send('Erro ao editar produto')
-        }else{
-          res.status(200).send('Produto editado com sucesso')
-        }
     }
-}
 
 module.exports = ProdutoController
