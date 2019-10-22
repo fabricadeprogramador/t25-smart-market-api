@@ -1,6 +1,6 @@
 'use strict'
 const Mongoose = require('mongoose');
-const Usuario = require('./../model/Usuario');
+const Usuario = Mongoose.model("Usuario");
 
 class UsuarioController {
 
@@ -24,7 +24,7 @@ class UsuarioController {
 
     static async adicionar(req, res) {
         try {
-            let usuarioNovo = req.body;
+            let usuarioNovo = req.body
             res.json(await Usuario.create(usuarioNovo));
 
         } catch (error) {

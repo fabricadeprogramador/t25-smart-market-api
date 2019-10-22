@@ -1,5 +1,5 @@
 "use strict"
-const Mongoose = require ("mongoose")
+const Mongoose = require("mongoose")
 const Compra = Mongoose.model("Compra")
 
 
@@ -11,7 +11,7 @@ let cont = 3
 class ComprasController {
 
 
-   static async buscarCompras(req, res) {
+    static async buscarTodos(req, res) {
         try {
             res.json(await Compra.find({}))
         } catch (error) {
@@ -19,8 +19,17 @@ class ComprasController {
         }
     }
 
-    
+    static async adicionar(req, res) {
+        try {
+            let compraNova = req.body
+            res.json(await Compra.create(compraNova))
+        } catch (error) {
+            res.status(500).send(`Erro ao salvar compra: ${error}`)
+        }
+
+
+
     }
+}
 
-
-module.exports = ComprasController
+    module.exports = ComprasController

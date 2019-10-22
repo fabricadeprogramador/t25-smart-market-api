@@ -1,4 +1,4 @@
-const Usuario = require('./../model/Usuario')
+
 const UsuarioController = require('./../controller/UsuarioController')
 
 class UsuarioRoute {

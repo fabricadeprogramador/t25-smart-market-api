@@ -8,7 +8,8 @@ class CompraRoute {
         
 
         app.route('/compras')
-            .get(ComprasController.buscarCompras)
+            .get(ComprasController.buscarTodos)
+            .post(ComprasController.adicionar)
             
 
         
