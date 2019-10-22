@@ -36,20 +36,6 @@ class ClienteController {
         }
     }
 
-    ativacao(req, res) {
-        let id = req.body.id
-        let erro = true;
-        for (let i = 0; i < clientes.length; i++) {
-            if (clientes[i].id == id) {
-                clientes[i].ativo = !clientes[i].ativo;
-                erro = false;
-            }
-        }
-        if (erro) {
-            res.status(500).send("Erro ao editar cliente!");
-        } else {
-            res.status(200).send("Cliente editado com sucesso!");
-        }
-    }
+   
 }
 module.exports = ClienteController
