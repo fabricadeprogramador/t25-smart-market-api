@@ -11,9 +11,7 @@ class ClienteRoute {
             .put(ClienteController.editar)
 
             
-        app.route('/clientes/ativacao')
-            .post(cliente.ativacao)
-
+       
     }
 }
 

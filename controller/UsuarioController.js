@@ -22,7 +22,7 @@ class UsuarioController {
         }
     }
 
-    adicionar(req, res) {
+    static async adicionar(req, res) {
         try {
             let usuarioNovo = req.body;
             res.json(await Usuario.create(usuarioNovo));
@@ -32,7 +32,7 @@ class UsuarioController {
         }
     }
 
-    editar(req, res) {
+    static async editar(req, res) {
         try {
             let usuarioEdicao = req.body
             res.status(200).json(await Usuario.findByIdAndUpdate(usuarioEdicao))
@@ -41,7 +41,7 @@ class UsuarioController {
         }
     }
 
-    deletar(req, res) {
+    static async deletar(req, res) {
         try {
             let id = req.params.id
             let objDeletar = {}

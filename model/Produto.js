@@ -4,7 +4,6 @@ class Produto {
         this.id = id
         this.disponivel = disponivel
         this.ativo = ativo
-
         this.descricao = descricao
         this.valor = valor
         this.qtdDisponivel = qtdDisponivel
