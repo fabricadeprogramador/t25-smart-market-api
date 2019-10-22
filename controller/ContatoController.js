@@ -16,7 +16,8 @@ class ContatoController {
         try {
             res.json(await Contato.find({}))
         } catch (error) {
-            res.status(500).send('Erro ao buscar contatos: ${error}')
+            // res.status(500).send('Erro ao buscar contatos: ${error}')
+            res.status(500).send(`Erro ao buscar contato por nome: ${error}`)
         }
     }
 
@@ -24,9 +25,10 @@ class ContatoController {
         
         try {
             let contatoNovo= req.body
-            res.json(await Convidado.create(contatoNovo))
+            res.json(await Contato.create(contatoNovo))
         } catch (error) {
-            res.status(500).send('Erro ao salvar convidado: &{error}')
+            // res.status(500).send('Erro ao salvar contato: ${error}')
+            res.status(500).send(`Erro ao salvar contato: ${error}`)
         }
     }
 

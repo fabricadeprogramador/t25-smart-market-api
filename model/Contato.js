@@ -4,9 +4,9 @@ class Contato extends Mongoose.Schema {
     constructor() {
 
         super({
-            id: {
-                type: Number
-            },
+            // id: {
+            //     type: Number
+            // },
             cliente: {
                 type: String
             },
@@ -17,13 +17,13 @@ class Contato extends Mongoose.Schema {
                 type: String
             },
             datacontato: {
-                type: Number
+                type: String
             },
             resposta: {
                 type: String
             },
             respondido: {
-                type: String
+                type: Boolean
                 
             }
         })
