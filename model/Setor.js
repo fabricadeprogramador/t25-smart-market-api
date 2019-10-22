@@ -1,10 +1,19 @@
-class Setor {
+const mongoose = require('mongoose');
 
-    constructor(id, ativo, name) {
-        this.id = id
-        this.ativo = ativo
-        this.name = name
+class Setor extends mongoose.Schema {
+
+    constructor() {
+
+        super({
+            ativo: {
+                type: Boolean
+            },
+            name: {
+                type: String
+            },
+        });
+        mongoose.model('Setor', this);
     }
 }
 
-module.exports = Setor
+module.exports = Setor;
