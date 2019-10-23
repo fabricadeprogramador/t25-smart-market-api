@@ -1,17 +1,22 @@
 const SetorController = require('./../controller/SetorController');
+
 class SetorRouter {
 
     constructor(app) {
 
-        let setor = new SetorController();
-
         app.route('/setores')
-           .get(setor.buscarTodos)
-           .post(setor.adicionar)
-           .put(setor.editar)
+           .get(SetorController.buscarTodos)
+           .post(SetorController.adicionar)
+           .put(SetorController.editar)
 
-        app.route('/setores/ativacao')
-           .post(setor.ativacao)
+       // app.route('/setores/ativacao')
+        //   .post(SetorController.ativacao)
+
+        app.route('/setores/:id')
+           .delete(SetorController.deletar)
+
+        app.route('/setores/busca')
+           .get(SetorController.buscarPorNome)
     }
 }
 

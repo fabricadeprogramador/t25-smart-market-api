@@ -15,7 +15,7 @@ class Usuario extends mongoose.Schema {
             senha: {
                 type: String
             },
-            tipo: {
+            tipo: { 
                 type: String
             }
         }); 

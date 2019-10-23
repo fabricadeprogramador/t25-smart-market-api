@@ -13,6 +13,7 @@ const Produto = require('./model/Produto')
 const Cliente = require('./model/Cliente')
 const Usuario = require('./model/Usuario');
 const Compra = require("./model/Compra");
+const Setor = require("./model/Setor");
 
 
 class App {
@@ -50,6 +51,8 @@ class App {
         
         new Compra()
         new Contato()
+
+        new Setor()
 
         //Importações das rotas
         const ConvidadoRoute = require('./routes/ConvidadosRoute')
