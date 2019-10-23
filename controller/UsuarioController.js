@@ -34,8 +34,9 @@ class UsuarioController {
 
     static async editar(req, res) {
         try {
-            let usuarioEdicao = req.body;
-            res.status(200).json(await Usuario.findByIdAndUpdate(usuarioEdicao));
+            let usuarioEdicao = req.body
+            res.status(200).json(await Usuario.findByIdAndUpdate(usuarioEdicao._id, usuarioEdicao))
+
         } catch (error) {
             res.status(500).send(`Erro ao editar o convidado: ${error}`);
         }
