@@ -3,13 +3,11 @@ const ProdutoController = require('./../controller/ProdutoController')
 class ProdutoRoute {
 
   constructor(app) {
-    let produto = new ProdutoController()
 
     app.route('/produtos')
-      .get(produto.buscar)
-      .get(produto.buscarSetores)
-      .post(produto.salvar)
-      .put(produto.editar)
+      .get(ProdutoController.buscar)
+      .post(ProdutoController.adicionar)
+      .put(ProdutoController.editar)
   }
 }
 

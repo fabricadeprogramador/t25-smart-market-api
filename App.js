@@ -6,9 +6,11 @@ const Mongoose = require('mongoose');
 
 //Importações dos modelos
 const Convidado = require('./model/Convidado')
+const Produto = require('./model/Produto')
 const Cliente = require('./model/Cliente')
 const Usuario = require('./model/Usuario');
 const Compra = require("./model/Compra");
+const Setor = require("./model/Setor");
 
 
 class App {
@@ -38,11 +40,15 @@ class App {
         //Instanciando os modelos
         new Convidado()
         
+        new Produto()
+        
         new Cliente()     
  
         new Usuario()
         
         new Compra()
+
+        new Setor()
 
         //Importações das rotas
         const ConvidadoRoute = require('./routes/ConvidadosRoute')

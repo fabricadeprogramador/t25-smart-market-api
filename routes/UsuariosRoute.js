@@ -1,4 +1,3 @@
-
 const UsuarioController = require('./../controller/UsuarioController')
 
 class UsuarioRoute {
