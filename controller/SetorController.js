@@ -13,17 +13,7 @@ class SetorController {
             res.status(500).send('Erro ao buscar Setor!');
         }
     }
-
-    static async buscarPorNome(req, res) {
-
-        try {
-            let objBusca = req.body;
-            res.json(await Setor.find(objBusca));
-        } catch (error) {
-            res.status(500).send('Setor não encontrado!')
-        }
-    }
-
+    
     static async adicionar(req, res) {
         
         try {

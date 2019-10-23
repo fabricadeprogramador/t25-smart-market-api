@@ -15,8 +15,6 @@ class SetorRouter {
         app.route('/setores/:id')
            .delete(SetorController.deletar)
 
-        app.route('/setores/busca')
-           .get(SetorController.buscarPorNome)
     }
 }
 
