@@ -1,14 +1,18 @@
 'use strict'
 
-const Express = require('express')
-const Cors = require('cors')
-const Mongoose = require('mongoose')
+const Express = require('express');
+const Cors = require('cors');
+const Mongoose = require('mongoose');
 
 //Importações dos modelos
 const Convidado = require('./model/Convidado')
 const Contato = require('./model/Contato')
 
-const Compra = require("./model/Compra")
+
+const Produto = require('./model/Produto')
+const Cliente = require('./model/Cliente')
+const Usuario = require('./model/Usuario');
+const Compra = require("./model/Compra");
 
 
 class App {
@@ -37,6 +41,13 @@ class App {
 
         //Instanciando os modelos
         new Convidado()
+        
+        new Produto()
+        
+        new Cliente()     
+ 
+        new Usuario()
+        
         new Compra()
         new Contato()
 
@@ -54,11 +65,10 @@ class App {
         new ConvidadoRoute(this.app)
         new ContatoRoute(this.app)
         new ProdutoRoute(this.app)
-        new UsuarioRoute(this.app)
         new CompraRoute(this.app)
-        new UsuarioRoute(this.app)
         new ClienteRoute(this.app)
         new SetorRoute(this.app)
+        new UsuarioRoute(this.app)
 
         //Rota Raíz
         this.app.get('/', function (req, res) {

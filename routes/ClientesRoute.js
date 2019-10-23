@@ -6,14 +6,12 @@ class ClienteRoute {
         let cliente = new ClienteController()
 
         app.route('/clientes')
-            .get(cliente.buscarTodos)
-            .post(cliente.adicionar)
-            .put(cliente.editar)
+            .get(ClienteController.buscarTodos)
+            .post(ClienteController.adicionar)
+            .put(ClienteController.editar)
 
             
-        app.route('/clientes/ativacao')
-            .post(cliente.ativacao)
-
+       
     }
 }
 
