@@ -30,10 +30,11 @@ class ClienteController {
     static async editar(req, res) {
         try {
             let clienteEdicao = req.body
-            res.status(200).json(await Cliente.findByIdAndUpdate(clienteEdicao))
+            res.status(200).json(await Cliente.findByIdAndUpdate(clienteEdicao._id,clienteEdicao))
         } catch (error) {
             res.status(500).send(`Erro ao editar o cliente: ${error}`)
         }
+    
     }
 
    
