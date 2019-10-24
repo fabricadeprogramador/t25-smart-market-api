@@ -1,18 +1,18 @@
-
-const Produto = require('./../model/Produto')
+const Mongoose = require('mongoose')
+const Produto = Mongoose.model('Produto')
 
 class ProdutoController{
 
-    static async buscar(req, res){
+    static async buscarProdutos(req, res){
       try {
         res.json(await Produto.find({}))
       } catch (error) {
         res.status(500).send(`Erro ao buscar produtos: ${error}`)
       }  
       
-    }
+    } 
 
-    static async adicionar(req, res){
+    static async adicionarProduto(req, res){
       try {
         let novoProduto = req.body;
         res.json(await Produto.create(novoProduto)) 

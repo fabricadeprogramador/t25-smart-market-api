@@ -5,8 +5,8 @@ class ProdutoRoute {
   constructor(app) {
 
     app.route('/produtos')
-      .get(ProdutoController.buscar)
-      .post(ProdutoController.adicionar)
+      .get(ProdutoController.buscarProdutos)
+      .post(ProdutoController.adicionarProduto)
       .put(ProdutoController.editar)
   }
 }
