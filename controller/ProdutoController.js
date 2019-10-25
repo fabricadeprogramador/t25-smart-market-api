@@ -26,7 +26,7 @@ class ProdutoController{
     static async editar(req, res){
       try {
         let editarProduto = req.body
-        res.json(await Produto.findByIdAndUpdate(editarProduto))
+        res.json(await Produto.findByIdAndUpdate(editarProduto._id,editarProduto))
       } catch (error) {
         res.status(500).send(`Erro ao editar produtos: ${error}`)
       }
