@@ -38,4 +38,3 @@ class Produto extends Mongoose.Schema{
     }
 }
 module.exports = Produto
-
