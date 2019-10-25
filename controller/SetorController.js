@@ -28,25 +28,21 @@ class SetorController {
 
         try {
             let setorEdicao = req.body;
-            res.status(200).json(await Setor.findByIdAndUpdate(setorEdicao));
+            res.status(200).json(await Setor.findByIdAndUpdate(setorEdicao._id, setorEdicao));
         } catch (error) {
             
         }
     }
 
-    static async deletar(req, res) {
+    /*static async ativacao(req, res) {
+
         try {
-            let id = req.params.id
-            let objDeletar = {}
-            objDeletar._id = id
-
-            res.status(200).json(await Setor.findByIdAndDelete(objDeletar))
+            let setorStatus = req.body;
+            res.status(200).json(await Setor.)
         } catch (error) {
-            res.status(500).send(`Erro ao remover setor!`)
+            
         }
-    }
-
-    //ativacao(req, res) {
+    }*/
     
 }
 
