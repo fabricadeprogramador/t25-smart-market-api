@@ -5,7 +5,7 @@ class CompraRoute {
 
     constructor(app) {
 
-        
+    
 
         app.route('/compras')
             .get(ComprasController.buscarTodos)

@@ -6,6 +6,9 @@ const Mongoose = require('mongoose');
 
 //Importações dos modelos
 const Convidado = require('./model/Convidado')
+const Contato = require('./model/Contato')
+
+
 const Produto = require('./model/Produto')
 const Cliente = require('./model/Cliente')
 const Usuario = require('./model/Usuario');
@@ -47,6 +50,7 @@ class App {
         new Usuario()
         
         new Compra()
+        new Contato()
 
         new Setor()
 
