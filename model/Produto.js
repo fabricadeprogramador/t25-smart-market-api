@@ -5,34 +5,38 @@ class Produto extends Mongoose.Schema{
         super({
             nome:{
                 type: String,
-                required: true
+                // required: true
             },
             imagem: {
                 type: String
             },
             valor: {
                 type: Number,
-                required: true 
+                // required: true 
             },
-            setor: {
-                nome:{
-                    type: String
-                }
-            },
+            // setor: {
+            //     nome:{
+            //         type: String,
+            //          required: true
+            //     }
+            // },
             marca: {
                 type: String,
-                required: true 
+                // required: true 
             },
             quantidade: {
                 type: Number,
-                required: true 
             },
             descricao: {
                 type: String,
-                },
+            },
             disponivel: {
                 type: Boolean,
+                default: true
             },
+            validade:{
+                type: String
+            }
         })
         Mongoose.model('Produto', this)
     }
