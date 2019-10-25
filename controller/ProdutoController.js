@@ -15,6 +15,7 @@ class ProdutoController{
     static async adicionarProduto(req, res){
       try {
         let novoProduto = req.body;
+        console.log(novoProduto)
         res.json(await Produto.create(novoProduto)) 
                
       } catch (error) {
