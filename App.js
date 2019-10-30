@@ -74,7 +74,7 @@ class App {
         })
 
         //Listen
-        this.app.listen(config.port, () => {
+        this.app.listen(process.env.PORT || 5000, () => {
             console.log('API - Smart Market rodando na porta: ' + config.port)
         })
 
