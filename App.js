@@ -4,11 +4,12 @@ const Express = require('express');
 const Cors = require('cors');
 const Mongoose = require('mongoose');
 
+const env = process.NODE_ENV || 'development'
+const config = require('./config.json')[env]
+
 //Importações dos modelos
 const Convidado = require('./model/Convidado')
 const Contato = require('./model/Contato')
-
-
 const Produto = require('./model/Produto')
 const Cliente = require('./model/Cliente')
 const Usuario = require('./model/Usuario');
@@ -28,13 +29,12 @@ class App {
         //Instanciar o express
         this.app = Express();
 
-
         //Conversor JSON-ObjetoJS
         this.app.use(Express.json())
         this.app.use(Cors())
 
         //Conectando com o banco mLab
-        Mongoose.connect("mongodb://t25-smart-market:t25-ht@ds233268.mlab.com:33268/smart-market-api", {
+        Mongoose.connect(`mongodb://${config.db.user}:${config.db.password}@${config.db.url}:${config.db.port}/${config.db.nome}`, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false
@@ -42,16 +42,11 @@ class App {
 
         //Instanciando os modelos
         new Convidado()
-        
         new Produto()
-        
-        new Cliente()     
- 
+        new Cliente()
         new Usuario()
-        
         new Compra()
         new Contato()
-
         new Setor()
 
         //Importações das rotas
@@ -79,8 +74,8 @@ class App {
         })
 
         //Listen
-        this.app.listen(3000, function () {
-            console.log('API - Smart Market rodando na porta: 3000')
+        this.app.listen(config.port, function () {
+            console.log('API - Smart Market rodando na porta: ' + config.port)
         })
 
     }
