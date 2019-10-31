@@ -4,7 +4,7 @@ class Compra extends mongoose.Schema {
     constructor() {
 
         super({
-            produtos: [ {
+            produtos: [{
                 nome: {
                     type: String
                 },
@@ -18,11 +18,10 @@ class Compra extends mongoose.Schema {
                 },
 
                 quantidade: {
-                    type:Number
+                    type: Number
                 }
-            }
+            }],
 
-            ],
             valorTotal: {
                 type: Number
 
@@ -38,17 +37,17 @@ class Compra extends mongoose.Schema {
                 type: String
             },
 
-            
-             cliente: {
-                    nome: {
-                        type:String
-                    },
 
-                    cpf: {
-                        type: String
-                    }
+            cliente: {
+                nome: {
+                    type: String
+                },
+
+                cpf: {
+                    type: String
                 }
-            
+            }
+
 
         })
 
