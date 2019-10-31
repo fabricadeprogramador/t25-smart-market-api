@@ -9,14 +9,9 @@ class SetorRouter {
            .post(SetorController.adicionar)
            .put(SetorController.editar)
 
-       // app.route('/setores/ativacao')
-        //   .post(SetorController.ativacao)
+        //app.route('/setores/ativacao')
+          // .post(SetorController.ativacao)
 
-        app.route('/setores/:id')
-           .delete(SetorController.deletar)
-
-        app.route('/setores/busca')
-           .get(SetorController.buscarPorNome)
     }
 }
 

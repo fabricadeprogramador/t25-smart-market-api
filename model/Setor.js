@@ -7,7 +7,7 @@ class Setor extends mongoose.Schema {
         super({
             ativo: {
                 type: Boolean
-            },
+            },  
             name: {
                 type: String
             },

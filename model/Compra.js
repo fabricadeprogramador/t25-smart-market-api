@@ -5,6 +5,7 @@ class Compra extends mongoose.Schema {
 
         super({
 
+<<<<<<< HEAD
             Produtos: [
                 {
                     descricao: {
@@ -21,6 +22,26 @@ class Compra extends mongoose.Schema {
 
 
 
+=======
+            produtos: [ {
+                nome: {
+                    type: String
+                },
+
+                marca: {
+                    type: String
+                },
+
+                valor: {
+                    type: Number
+                },
+
+                quantidade: {
+                    type:Number
+                }
+            }
+
+>>>>>>> dc9d713df8562e4a49b6c6d25d573b9f56ecd09b
             ],
             valorTotal: {
                 type: Number
@@ -37,6 +58,7 @@ class Compra extends mongoose.Schema {
                 type: String
             },
 
+<<<<<<< HEAD
             cliente: {
                 nome: {
                     type: String
@@ -47,6 +69,19 @@ class Compra extends mongoose.Schema {
 
                 }
             }
+=======
+            
+             cliente: {
+                    nome: {
+                        type:String
+                    },
+
+                    cpf: {
+                        type: String
+                    }
+                }
+            
+>>>>>>> dc9d713df8562e4a49b6c6d25d573b9f56ecd09b
 
         })
 

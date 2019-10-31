@@ -1,20 +1,21 @@
-
-const Produto = require('./../model/Produto')
+const Mongoose = require('mongoose')
+const Produto = Mongoose.model('Produto')
 
 class ProdutoController{
 
-    static async buscar(req, res){
+    static async buscarProdutos(req, res){
       try {
         res.json(await Produto.find({}))
       } catch (error) {
         res.status(500).send(`Erro ao buscar produtos: ${error}`)
       }  
       
-    }
+    } 
 
-    static async adicionar(req, res){
+    static async adicionarProduto(req, res){
       try {
         let novoProduto = req.body;
+        console.log(novoProduto)
         res.json(await Produto.create(novoProduto)) 
                
       } catch (error) {
@@ -25,7 +26,7 @@ class ProdutoController{
     static async editar(req, res){
       try {
         let editarProduto = req.body
-        res.json(await Produto.findByIdAndUpdate(editarProduto))
+        res.json(await Produto.findByIdAndUpdate(editarProduto._id,editarProduto))
       } catch (error) {
         res.status(500).send(`Erro ao editar produtos: ${error}`)
       }
