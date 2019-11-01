@@ -1,9 +1,9 @@
 const Mongoose = require('mongoose')
-class Produto extends Mongoose.Schema{
+class Produto extends Mongoose.Schema {
 
-    constructor(){
+    constructor() {
         super({
-            nome:{
+            nome: {
                 type: String,
                 // required: true
             },
@@ -14,12 +14,11 @@ class Produto extends Mongoose.Schema{
                 type: Number,
                 // required: true 
             },
-            // setor: {
-            //     nome:{
-            //         type: String,
-            //          required: true
-            //     }
-            // },
+            setor: {
+                type: Mongoose.Schema.Types.ObjectId,
+                ref: 'Setor',
+                required: false
+            },
             marca: {
                 type: String,
                 // required: true 
@@ -34,7 +33,7 @@ class Produto extends Mongoose.Schema{
                 type: Boolean,
                 default: true
             },
-            validade:{
+            validade: {
                 type: String
             }
         })
