@@ -3,9 +3,7 @@ class Produto extends Mongoose.Schema {
 
     constructor() {
         super({
-            ativo: {
-                type: Boolean
-            },
+            
 
             nome: {
                 type: String,
@@ -35,7 +33,7 @@ class Produto extends Mongoose.Schema {
             },
             disponivel: {
                 type: Boolean,
-                default: true
+                
             },
             validade: {
                 type: String
