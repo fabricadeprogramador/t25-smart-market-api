@@ -9,12 +9,16 @@ class UsuarioRoute {
             .post(UsuarioController.adicionar)
             .put(UsuarioController.editar)
 
-
         app.route('/usuarios/:id')
             .delete(UsuarioController.deletar)
 
         app.route('/usuarios/busca')
             .get(UsuarioController.buscarPorNome)
+
+        app.route('/autenticar')
+            .post(UsuarioController.autenticar)
+
+
     }
 }
 

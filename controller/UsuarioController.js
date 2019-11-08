@@ -38,7 +38,7 @@ class UsuarioController {
             res.status(200).json(await Usuario.findByIdAndUpdate(usuarioEdicao._id, usuarioEdicao))
 
         } catch (error) {
-            res.status(500).send(`Erro ao editar o convidado: ${error}`);
+            res.status(500).send(`Erro ao editar o usuário: ${error}`);
         }
     }
 
@@ -50,7 +50,20 @@ class UsuarioController {
 
             res.status(200).json(await Usuario.findByIdAndDelete(objDeletar))
         } catch (error) {
-            res.status(500).send(`Erro ao remover convidado: ${error}`)
+            res.status(500).send(`Erro ao remover usuário: ${error}`)
+        }
+    }
+
+    static async autenticar(req, res) {
+
+        
+        try {
+          
+            let objUsuario = req.body
+            
+            res.json(await Usuario.find(objUsuario));
+        } catch (error) {
+            res.status(500).send(`Erro ao logar no sistema: ${error}`)
         }
     }
 

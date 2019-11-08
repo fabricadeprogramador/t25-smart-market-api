@@ -19,6 +19,10 @@ class Cliente extends Mongoose.Schema {
                 type: String,
                 required: true
             },
+            usuario:{
+                type: String,
+                required: true
+            },
             cep:{
                 type: String
             },
