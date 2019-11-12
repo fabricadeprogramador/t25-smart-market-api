@@ -54,20 +54,14 @@ class UsuarioController {
         }
     }
 
-    static async autenticar(req, res) {
-
-        
-        try {
-          
-            let objUsuario = req.body
-            
+    static async autenticar(req, res) {        
+        try {          
+            let objUsuario = req.body            
             res.json(await Usuario.find(objUsuario));
         } catch (error) {
             res.status(500).send(`Erro ao logar no sistema: ${error}`)
         }
     }
-
-
 }
 
 module.exports = UsuarioController;
