@@ -11,6 +11,9 @@ class Setor extends mongoose.Schema {
             name: {
                 type: String
             },
+            imagem: {
+                type: String
+            }
         });
         mongoose.model('Setor', this);
     }
