@@ -8,7 +8,9 @@ class Contato extends Mongoose.Schema {
             //     type: Number
             // },
             cliente: {
-                type: String
+                type: Mongoose.Schema.Types.ObjectId,
+                ref: 'Cliente',
+                required: false
             },
             assunto: {
                 type: String
@@ -24,7 +26,7 @@ class Contato extends Mongoose.Schema {
             },
             respondido: {
                 type: Boolean
-                
+
             }
         })
         Mongoose.model('Contato', this)
