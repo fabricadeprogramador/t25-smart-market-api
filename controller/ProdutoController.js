@@ -14,6 +14,19 @@ class ProdutoController {
 
   }
 
+  static async buscarProdutosPorSetor(req, res){
+    try {
+      let setor =  req.body;
+
+      let prod = await Produto.find({setor: setor});
+
+      res.json(prod);
+
+    } catch (error) {
+      res.status(500).send(`Erro ao buscar produtos pelo setor: ${error}`)      
+    }
+  }
+
   static async adicionarProduto(req, res) {
     try {
       let novoProduto = req.body;
