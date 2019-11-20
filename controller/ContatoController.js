@@ -2,19 +2,26 @@
 const Mongoose = require('mongoose')
 const Contato = Mongoose.model('Contato')
 
-// let Contato1 = new Contato(0, "Jose da silva", "tecnico", "Alterar bla bla", "24/09/19")
-// let Contato2 = new Contato(1, "Marcos", "tecnico", "Alterar bla bla", "24/09/19")
-// let Contato3 = new Contato(2, "João", "tecnico", "Alterar bla bla", "24/09/19")
-
-let contatos = []
-let cont = 3
-
 class ContatoController {
 
     static async buscarTodos(req, res) {
 
         try {
-            res.json(await Contato.find({}))
+            res.json(await Contato.find({}).populate('cliente', 'nome cpf').exec())
+        } catch (error) {
+            // res.status(500).send('Erro ao buscar contatos: ${error}')
+            res.status(500).send(`Erro ao buscar contato por nome: ${error}`)
+        }
+    }
+
+    static async buscarPorCliente(req, res) {
+
+        let objetoBusca = req.body
+
+        try {
+            res.json(await Contato.find({
+                "cliente": objetoBusca
+            }))
         } catch (error) {
             // res.status(500).send('Erro ao buscar contatos: ${error}')
             res.status(500).send(`Erro ao buscar contato por nome: ${error}`)

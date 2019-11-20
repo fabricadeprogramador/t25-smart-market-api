@@ -10,8 +10,12 @@ class ContatoRoute {
             .post(ContatoController.adicionar)
             .put(ContatoController.editar)
 
-        
-            // app.route('/contato/:id')
+
+        app.route('/contato/cliente')
+            .get(ContatoController.buscarPorCliente)
+
+
+        // app.route('/contato/:id')
 
         //     .delete(contato.deletar)
 
