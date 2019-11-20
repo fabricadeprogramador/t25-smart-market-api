@@ -15,6 +15,15 @@ class ClienteController {
         }
     }
 
+    static async buscarClientePorUsuario(req, res) {        
+        try {          
+            let objUsuario = req.body            
+            res.json(await Cliente.find(objUsuario));
+        } catch (error) {
+            res.status(500).send(`Erro ao logar no sistema: ${error}`)
+        }
+    }
+
     static async adicionar(req, res) {
         try {
             let clienteNovo = req.body
