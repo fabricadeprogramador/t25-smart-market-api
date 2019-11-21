@@ -9,11 +9,11 @@ class ClienteRoute {
             .get(ClienteController.buscarTodos)
             .post(ClienteController.adicionar)
             .put(ClienteController.editar)
-        
+
         app.route('/clientes/usuario')
-            .get(ClienteController.buscarClientePorUsuario)
-            
-       
+            .post(ClienteController.buscarClientePorUsuario)
+
+
     }
 }
 
