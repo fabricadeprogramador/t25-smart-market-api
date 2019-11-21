@@ -15,9 +15,10 @@ class ClienteController {
         }
     }
 
-    static async buscarClientePorUsuario(req, res) {        
-        try {          
-            let objUsuario = req.body            
+    static async buscarClientePorUsuario(req, res) {
+        try {
+            let objUsuario = req.body
+            console.log("Objeto parametro da busca de cliente por usuario: " + JSON.stringify(objUsuario))
             res.json(await Cliente.find(objUsuario));
         } catch (error) {
             res.status(500).send(`Erro ao logar no sistema: ${error}`)
@@ -39,13 +40,13 @@ class ClienteController {
     static async editar(req, res) {
         try {
             let clienteEdicao = req.body
-            res.status(200).json(await Cliente.findByIdAndUpdate(clienteEdicao._id,clienteEdicao))
+            res.status(200).json(await Cliente.findByIdAndUpdate(clienteEdicao._id, clienteEdicao))
         } catch (error) {
             res.status(500).send(`Erro ao editar o cliente: ${error}`)
         }
-    
+
     }
 
-   
+
 }
 module.exports = ClienteController
