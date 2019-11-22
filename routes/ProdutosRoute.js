@@ -11,8 +11,8 @@ class ProdutoRoute {
 
     //Rota para buscar produtos por setores  
     app.route('/produtos/setor')
-       .get(ProdutoController.buscarProdutosPorSetor)  
+       .post(ProdutoController.buscarProdutosPorSetor)  
   }
+  
 }
-
 module.exports = ProdutoRoute
