@@ -16,7 +16,8 @@ class ClienteController {
     }
 
     static async buscarClientePorUsuario(req, res) {        
-        try {          
+        try {    
+            console.log(req.body)      
             let objUsuario = req.body            
             res.json(await Cliente.find(objUsuario));
         } catch (error) {
