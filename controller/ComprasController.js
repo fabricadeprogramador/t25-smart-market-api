@@ -22,6 +22,7 @@ class ComprasController {
     static async adicionar(req, res) {
         try {
             let compraNova = req.body
+            console.log(JSON.stringify(compraNova))
             res.json(await Compra.create(compraNova))
         } catch (error) {
             res.status(500).send(`Erro ao salvar compra: ${error}`)
@@ -32,4 +33,4 @@ class ComprasController {
     }
 }
 
-    module.exports = ComprasController
+module.exports = ComprasController
