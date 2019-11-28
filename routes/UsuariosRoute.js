@@ -17,8 +17,7 @@ class UsuarioRoute {
 
         app.route('/autenticar')
             .post(UsuarioController.autenticar)
-
-
+            
     }
 }
 

@@ -12,9 +12,8 @@ class ClienteRoute {
         
         app.route('/clientes/usuario')
             .get(ClienteController.buscarClientePorUsuario)
-            
-       
-    }
+    
+        }
 }
 
 module.exports = ClienteRoute

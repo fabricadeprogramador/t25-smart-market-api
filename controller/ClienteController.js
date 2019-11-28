@@ -29,6 +29,7 @@ class ClienteController {
         try {
             let clienteNovo = req.body
             res.json(await Cliente.create(clienteNovo))
+            console.log(req.body)   
 
         } catch (error) {
             res.status(500).send(`Erro ao salvar cliente: ${error}`)
