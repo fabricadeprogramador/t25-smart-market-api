@@ -12,7 +12,7 @@ class ContatoRoute {
 
 
         app.route('/contato/cliente')
-            .get(ContatoController.buscarPorCliente)
+            .post(ContatoController.buscarPorCliente)
 
 
         // app.route('/contato/:id')
