@@ -14,16 +14,18 @@ class ProdutoController {
 
   }
 
-  static async buscarProdutosPorSetor(req, res){
+  static async buscarProdutosPorSetor(req, res) {
     try {
-      let setor =  req.body;
+      let setor = req.body;
 
-      let prod = await Produto.find({setor: setor});
+      let prod = await Produto.find({
+        setor: setor
+      });
 
       res.json(prod);
 
     } catch (error) {
-      res.status(500).send(`Erro ao buscar produtos pelo setor: ${error}`)      
+      res.status(500).send(`Erro ao buscar produtos pelo setor: ${error}`)
     }
   }
 
@@ -46,6 +48,32 @@ class ProdutoController {
       res.status(500).send(`Erro ao editar produtos: ${error}`)
     }
   }
+
+  // static async atualizarQuantidade(req, res) {
+  //   try {
+  //     let Venda = req.body
+  //     let produtoEstoque = await Produto.find({}).populate('setor', 'name ativo').exec()
+
+  //     let produtoVenda = await Produto.findById(Venda._id, Venda)
+
+  //     for (let index = 0; index < produtoEstoque.length; index++) {
+
+  //       if (produtoEstoque[index] == produtoVenda) {
+
+  //         let estoqueAtualizado = (produtoEstoque[index].quantidade - produtoVenda.quantidade)
+  //         produtoEstoque[index].quantidade = estoqueAtualizado
+
+  //         res.json(await Produto.findByIdAndUpdate(produtoEstoque[i]._id, produtoEstoque))
+  //       }
+  //     }
+
+
+  //   } catch (error) {
+  //     res.status(500).send(`Erro ao atualizar quantidade de produtos: ${error}`)
+  //   }
+
+
+  // }
 
 }
 
